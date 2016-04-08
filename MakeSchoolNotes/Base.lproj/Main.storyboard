@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qhm-XS-eR5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -131,20 +130,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-n5-z79">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="452"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="414"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-V9-7Rj">
-                                        <rect key="frame" x="8" y="46" width="584" height="398"/>
-                                        <color key="backgroundColor" red="0.011925643766145022" green="1" blue="0.51675044123911251" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="398" id="ihd-mo-XKS"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-C6-cKW">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-C6-cKW">
                                         <rect key="frame" x="0.0" y="-5" width="600" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" id="vrW-YT-293">
@@ -157,27 +145,33 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </barButtonItem>
-                                            <barButtonItem systemItem="trash" id="iBs-tg-69F">
-                                                <connections>
-                                                    <segue destination="0Wd-Xh-JYn" kind="unwind" identifier="Delete" unwindAction="unwindToSegue:" id="zvH-dI-ePo"/>
-                                                </connections>
-                                            </barButtonItem>
                                         </items>
                                     </toolbar>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-V9-7Rj">
+                                        <rect key="frame" x="8" y="46" width="584" height="398"/>
+                                        <color key="backgroundColor" red="0.011925643766145022" green="1" blue="0.51675044123911251" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KdI-V9-7Rj" firstAttribute="leading" secondItem="tpG-n5-z79" secondAttribute="leadingMargin" id="WXf-In-0eo"/>
-                                    <constraint firstItem="KdI-V9-7Rj" firstAttribute="bottom" secondItem="tpG-n5-z79" secondAttribute="bottomMargin" id="bwH-PO-2Ra"/>
-                                    <constraint firstItem="KdI-V9-7Rj" firstAttribute="centerX" secondItem="tpG-n5-z79" secondAttribute="centerX" id="eEy-Gq-ow0"/>
+                                    <constraint firstItem="IDP-C6-cKW" firstAttribute="centerX" secondItem="tpG-n5-z79" secondAttribute="centerX" id="Gr2-61-gY6"/>
+                                    <constraint firstItem="KdI-V9-7Rj" firstAttribute="centerX" secondItem="tpG-n5-z79" secondAttribute="centerX" id="c3U-83-2eZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tpG-n5-z79" firstAttribute="top" secondItem="TZC-fv-uoT" secondAttribute="bottom" id="B3p-Ra-N21"/>
-                            <constraint firstItem="tpG-n5-z79" firstAttribute="leading" secondItem="7YZ-go-e4V" secondAttribute="leading" id="LiG-Wp-Rp5"/>
-                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="iBs-tg-69F">
+                            <connections>
+                                <segue destination="0Wd-Xh-JYn" kind="unwind" identifier="Delete" unwindAction="unwindToSegue:" id="zvH-dI-ePo"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentTextView" destination="KdI-V9-7Rj" id="pVx-q5-Pto"/>
                         <outlet property="titleTextField" destination="LpI-im-yIC" id="ak8-dC-dOo"/>
@@ -186,7 +180,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeI-RC-4WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0Wd-Xh-JYn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="800" y="416"/>
+            <point key="canvasLocation" x="824" y="372"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

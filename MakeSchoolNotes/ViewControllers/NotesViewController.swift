@@ -24,23 +24,21 @@ class NotesViewController: UITableViewController {
     super.viewDidLoad()
     tableView.dataSource = self //ให้มันเก็บข้อมูลของตัวเองไว้
     tableView.delegate = self
+    do{
+        let realm = try Realm()
+        notes = realm.objects(Note).sorted("modificationDate", ascending:false)
+        
+    }catch{
+        print("Handle Error")
+    }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-    
-    //let myNote = Note()    //เตรียมข้อมูลเป็นก้อนลอยๆ ยังไม่ได้ลงฐานข้อมูล
-    //myNote.title = "Super Simple Test Note"
-    //myNote.content = "A long piece of content"
-    
-    //ยัดข้อมูลลงฐานข้อมูลใช้คำสั่ง do catch
     do{
         let realm = try Realm()//ดึงก้อนข้อมูลของเครื่อง
         
-       /* try realm.write(){
-            realm.add(myNote) //เพิ่มเข้าไปในหน่วยความจำจริงๆ
-        }*/
-        notes = realm.objects(Note).sorted("modificationDate", ascending: false) //update ข้อมูลให้กับ ตัวแปร notes
+            notes = realm.objects(Note).sorted("modificationDate", ascending: false) //update ข้อมูลให้กับ ตัวแปร notes
     }
     catch{
         print("handle error")
@@ -55,14 +53,14 @@ class NotesViewController: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "ShowNote"){
+        if(segue.identifier == "ShowExistingNote"){
         let noteDisplay = segue.destinationViewController  as! NoteDisplayViewController
         noteDisplay.note = SelectedNote
         }
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) { //segue คือข้อมูลที่มันจะส่งมา
-        if let id=segue.identifier{
+        if let id = segue.identifier{
            //print("Identifier \(id)")
             
             do{
@@ -99,7 +97,7 @@ extension NotesViewController //เพิ่มความยืดหยุ่
 {
     //mark: Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        SelectedNote = notes[indexPath.row]
         self.performSegueWithIdentifier("ShowExistingNote", sender: self)
     }
     
