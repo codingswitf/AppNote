@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Umb-GQ-Jap">
-                                <rect key="frame" x="0.0" y="64" width="600" height="496"/>
+                                <rect key="frame" x="60" y="43" width="600" height="496"/>
                                 <connections>
                                     <segue destination="Ftx-cj-gLZ" kind="embed" identifier="ShowNewNote" id="2tJ-pw-6ka"/>
                                 </connections>
@@ -126,7 +126,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uKD-8H-8zL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7YZ-go-e4V">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-n5-z79">
@@ -189,6 +189,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2tJ-pw-6ka"/>
+        <segue reference="tYs-Ao-2cw"/>
     </inferredMetricsTieBreakers>
 </document>
