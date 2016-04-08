@@ -129,27 +129,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-C6-cKW">
-                                <rect key="frame" x="0.0" y="452" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" id="vrW-YT-293">
-                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="LpI-im-yIC" userLabel="Title">
-                                            <rect key="frame" x="20" y="7" width="584" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.98878632484094675" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" red="0.98990384615384619" green="0.017788744997235852" blue="0.049289927950428504" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="trash" id="iBs-tg-69F">
-                                        <connections>
-                                            <segue destination="0Wd-Xh-JYn" kind="unwind" identifier="Delete" unwindAction="unwindToSegue:" id="zvH-dI-ePo"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-n5-z79">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-n5-z79">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="452"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-V9-7Rj">
@@ -163,6 +143,26 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-C6-cKW">
+                                        <rect key="frame" x="0.0" y="-5" width="600" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" id="vrW-YT-293">
+                                                <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="LpI-im-yIC" userLabel="Title">
+                                                    <rect key="frame" x="20" y="7" width="584" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.98878632484094675" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.98990384615384619" green="0.017788744997235852" blue="0.049289927950428504" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="trash" id="iBs-tg-69F">
+                                                <connections>
+                                                    <segue destination="0Wd-Xh-JYn" kind="unwind" identifier="Delete" unwindAction="unwindToSegue:" id="zvH-dI-ePo"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KdI-V9-7Rj" firstAttribute="leading" secondItem="tpG-n5-z79" secondAttribute="leadingMargin" id="WXf-In-0eo"/>
@@ -173,17 +173,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tpG-n5-z79" firstAttribute="trailing" secondItem="IDP-C6-cKW" secondAttribute="trailing" id="9cZ-WT-EQ8"/>
                             <constraint firstItem="tpG-n5-z79" firstAttribute="top" secondItem="TZC-fv-uoT" secondAttribute="bottom" id="B3p-Ra-N21"/>
-                            <constraint firstItem="tpG-n5-z79" firstAttribute="leading" secondItem="IDP-C6-cKW" secondAttribute="leading" id="EdI-6e-37r"/>
                             <constraint firstItem="tpG-n5-z79" firstAttribute="leading" secondItem="7YZ-go-e4V" secondAttribute="leading" id="LiG-Wp-Rp5"/>
-                            <constraint firstItem="IDP-C6-cKW" firstAttribute="bottom" secondItem="uKD-8H-8zL" secondAttribute="top" id="Mdb-QO-eoj"/>
-                            <constraint firstItem="IDP-C6-cKW" firstAttribute="top" secondItem="tpG-n5-z79" secondAttribute="bottom" id="RhV-z2-7K5"/>
-                            <constraint firstAttribute="trailing" secondItem="IDP-C6-cKW" secondAttribute="trailing" id="aRl-0S-vvg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="KdI-V9-7Rj" id="pVx-q5-Pto"/>
+                        <outlet property="titleTextField" destination="LpI-im-yIC" id="ak8-dC-dOo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeI-RC-4WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
